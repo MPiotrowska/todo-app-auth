@@ -105,7 +105,9 @@ const TodoList = () => {
           </li>
         ))}
       </ul>
-      <Button onClick={handleLogout}>Logout</Button>
+      <Button className='logout-btn' onClick={handleLogout}>
+        Logout
+      </Button>
     </div>
   );
 };

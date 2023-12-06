@@ -1,5 +1,16 @@
 @import './variables';
 
+input {
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+
+  &:focus {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
 .todo-list-container {
   display: flex;
   flex-direction: column;
@@ -22,7 +33,21 @@
   flex-grow: 1;
   margin-right: $spacing-s;
   height: $button-height;
-  padding-left: $spacing-xs;
+  padding: $spacing-xs $spacing-xs $spacing-xs $spacing-m;
+}
+
+.todo-edit-input {
+  padding: $spacing-s;
+  min-width: 200px;
+  min-height: calc($button-height - $spacing-s);
+}
+
+.todo-submit-btn {
+  min-width: 200px;
+  min-height: $button-height;
+  @media (max-width: $bp-mobile-landscape) {
+    padding: $spacing-s $spacing-xl;
+  }
 }
 
 .todo-items {
@@ -39,6 +64,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: $spacing-xl;
+  font-size: 20px;
 }
 
 .task-done {
@@ -58,9 +86,11 @@
   background-color: $secondary-color;
   color: white;
   border: none;
-  padding: $spacing-xs $spacing-s;
+  padding: $spacing-s $spacing-m;
   border-radius: $spacing-xs;
   cursor: pointer;
+  min-width: 70px;
+  font-size: $base-font-size;
 
   &:hover {
     background-color: darken($secondary-color, 10%);

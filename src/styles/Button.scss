@@ -4,12 +4,23 @@
   background-color: $primary-color;
   color: $button-text-color;
   border: none;
-  padding: $spacing-s $spacing-m;
   border-radius: $border-radius;
   cursor: pointer;
-  height: $button-height;
+  font-size: 20px;
 
   &:hover {
     background-color: darken($primary-color, 10%);
+  }
+
+  @media (max-width: $bp-mobile-landscape) {
+    padding: $spacing-m $spacing-xl;
+  }
+
+  &.logout-btn {
+    padding: $spacing-m $spacing-xl;
+    min-width: 200px;
+    @media (max-width: $bp-mobile-landscape) {
+      padding: $spacing-s $spacing-xl;
+    }
   }
 }
