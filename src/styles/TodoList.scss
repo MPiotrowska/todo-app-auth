@@ -1,0 +1,103 @@
+@import './variables';
+
+.todo-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: $spacing-l;
+}
+
+.todo-add-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: $spacing-s;
+}
+
+.todo-input {
+  flex-grow: 1;
+  margin-right: $spacing-s;
+  height: $button-height;
+  padding-left: $spacing-xs;
+}
+
+.todo-items {
+  padding-left: 0%;
+  max-width: 500px;
+  width: 100%;
+}
+
+.todo-item {
+  background-color: #fff;
+  margin-bottom: $spacing-s;
+  padding: $spacing-s;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-done {
+  text-decoration: line-through;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.toggle-btn,
+.remove-btn,
+.edit-btn,
+.save-btn {
+  background-color: $secondary-color;
+  color: white;
+  border: none;
+  padding: $spacing-xs $spacing-s;
+  border-radius: $spacing-xs;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+.error-message {
+  color: $error-color;
+}
+
+@media (max-width: $bp-tablet-portrait) {
+  .todo-add-form,
+  .todo-items {
+    max-width: 80%;
+  }
+
+  .todo-add-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-input {
+    margin-right: 0;
+    margin-bottom: $spacing-s;
+  }
+
+  .todo-items {
+    align-items: stretch;
+  }
+
+  .todo-item {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    margin-top: $spacing-s;
+  }
+}

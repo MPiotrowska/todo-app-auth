@@ -1,0 +1,15 @@
+@import './variables';
+
+.button {
+  background-color: $primary-color;
+  color: $button-text-color;
+  border: none;
+  padding: $spacing-s $spacing-m;
+  border-radius: $border-radius;
+  cursor: pointer;
+  height: $button-height;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
